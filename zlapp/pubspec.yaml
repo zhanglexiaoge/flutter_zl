@@ -1,0 +1,110 @@
+name: zlapp
+description: A new Flutter project.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  #多语言配置(国际化)
+  flutter_localizations:
+   sdk: flutter
+  cupertino_icons: ^0.1.2
+  #fluro简化了Flutter的路由开发，也是目前Flutter生态中最成熟的路由框架它添加了灵活的路由选项
+  fluro: ^1.6.3
+  #上拉刷新框架
+  pull_to_refresh: ^1.5.8
+  #使用简单, 可定制性强, 纯 flutter, 调用不用 context
+  oktoast: ^2.3.2
+  #状态管理 #依赖项注入和状态管理之间的混合，使用用于小部件的小部件构建。
+  provider: ^4.0.5
+  #  当我们想在多个页面（组件/Widget）之间共享状态（数据），或
+  #  者一个页面（组件/Widget）中的多个子组件之间共享状态（数据），这个时候我们就可以
+  #  用 Flutter 中的状态管理来管理统一的状态（数据），实现不同组件直接的传值和数据共享。
+  #  那么这一讲给大家讲的 event_bus 主要是实现不同组件之间的数据传值，以及在一个组件中
+  #  执行另一个组件的方法。 类似于iOS通知
+  event_bus: ^1.1.1
+  #本地存储
+  shared_preferences: ^0.5.6+3
+  #相当于iOS枷锁
+  synchronized: ^2.2.0
+  #轮播图
+  flutter_swiper: ^1.1.6
+  #图片加载
+  cached_network_image: ^2.0.0
+  #状态管理
+  rxdart: ^0.22.6
+  dio: 3.0.9                  #http请求
+  #检测是否联网
+  connectivity: ^0.4.2
+  #loading 各种菊花
+  flutter_spinkit: ^4.1.2
+  # toast
+  fluttertoast: ^4.0.1
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  #To add assets to your application, add an assets section, like this:
+  #assets  一定要和上面对齐
+  assets:
+    - assets/splashPageImage/
+    - assets/images/appTabbar/
+
+
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
