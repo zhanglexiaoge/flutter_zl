@@ -3,6 +3,7 @@ import 'package:fluro/fluro.dart';
 import 'package:zlapp/Page/Login/loginPage.dart';
 import 'package:zlapp/Page/splashPage/splashPage.dart';
 import 'package:zlapp/Page/tabBar/tabBarPage.dart';
+import 'package:zlapp/Page/Mine/Set/setPage.dart';
 
 // splash 页面 广告页
 var splashHandler = new Handler(
@@ -18,4 +19,9 @@ var loginHandler = new Handler(
 var tabbarHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<Object>> params) {
       return TabBarPage();
+    });
+// 设置页面
+var setPageHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<Object>> params) {
+      return SetPage();
     });

@@ -7,6 +7,7 @@ import 'package:zlapp/_const/const.dart';
 import 'package:zlapp/utitl/application.dart';
 import 'package:zlapp/Router/routes.dart';
 import 'dart:convert';
+import 'package:zlapp/EventBus/eventBusAll.dart';
 class LoginView extends StatefulWidget {
   @override
   _LoginViewState createState() => _LoginViewState();
@@ -75,7 +76,7 @@ class _LoginViewState extends State<LoginView> {
           child:Column(
             children: <Widget>[
               TextFormField(
-                autofocus: true,
+                autofocus: false,
                 controller: _unameController,
                 decoration: InputDecoration(
                     labelText: "用户名",
@@ -91,6 +92,7 @@ class _LoginViewState extends State<LoginView> {
               ),
               TextFormField(
                 controller: _pwdController,
+                autofocus: false,
                 decoration: InputDecoration(
                     labelText: "密码",
                     hintText: "您的登录密码",
@@ -110,6 +112,7 @@ class _LoginViewState extends State<LoginView> {
                     Expanded(
                       child: TextFormField(
                         controller: _verifyController,
+                        autofocus: false,
                         decoration: InputDecoration(
                             labelText: "验证码",
                             hintText: "您的验证码",
@@ -244,6 +247,8 @@ class _LoginViewState extends State<LoginView> {
         UserModelEntity model = UserModelEntity.fromJson(user);
         Application.sp.putString(SharedPreferencesKeys.USER_MODEL, json.encode(user));
         Application.router.navigateTo(context, Routes.tabbarpage,clearStack: true);
+        //发送通知
+        eventBus.fire(UserModelEvent(model));
       }
     }
   }

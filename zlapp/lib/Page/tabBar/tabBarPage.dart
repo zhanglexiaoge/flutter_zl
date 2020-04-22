@@ -56,7 +56,7 @@ class _TabBarPageState extends State<TabBarPage> {
      * 初始化选中和未选中的icon
      */
     tabImages = [
-      [getTabImage('assets/images/appTabbar/shouye.png'), getTabImage('assets/images/appTabbar/shouye-3.png')],
+      [getTabImage('assets/images/appTabbar/shouye.png'), getTabImage('assets/images/appTabbar/shouye-2.png')],
       [getTabImage('assets/images/appTabbar/shangcheng.png'), getTabImage('assets/images/appTabbar/shangcheng-2.png')],
       [getTabImage('assets/images/appTabbar/wode.png'), getTabImage('assets/images/appTabbar/wode-2.png')]
     ];

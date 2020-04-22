@@ -50,7 +50,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    Application.eventBus = new EventBus();
     themeColor = Application.sp.getInt(SharedPreferencesKeys.THEME_COLOR_KEY);
     isDarkMode = Application.sp.getBool(SharedPreferencesKeys.THEME_DARK_MODE_KEY);
     super.initState();
@@ -70,7 +69,6 @@ class _MyAppState extends State<MyApp> {
   void dispose() {
     //销毁
     super.dispose();
-    Application.eventBus.destroy();
   }
 
   @override

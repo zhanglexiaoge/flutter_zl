@@ -56,6 +56,8 @@ dependencies:
   flutter_spinkit: ^4.1.2
   # toast
   fluttertoast: ^4.0.1
+  #选择图片框架
+  image_picker: ^0.6.5+2
 
 
 
@@ -80,6 +82,7 @@ flutter:
   assets:
     - assets/splashPageImage/
     - assets/images/appTabbar/
+    - assets/images/minePage/
 
 
 
