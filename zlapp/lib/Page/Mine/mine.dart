@@ -5,7 +5,7 @@ import 'package:zlapp/_const/const.dart';
 import 'dart:convert';
 import 'package:zlapp/EventBus/eventBusAll.dart';
 import 'dart:async';
-import 'package:zlapp/utitl/screenUtil.dart';
+import 'package:zlapp/utitl/appSize.dart';
 import 'package:zlapp/Router/routes.dart';
 import 'package:fluro/fluro.dart';
 import 'package:image_picker/image_picker.dart';
@@ -64,8 +64,6 @@ class _MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin 
 
   @override
   Widget build(BuildContext context) {
-    //根据屏幕适配
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
         backgroundColor: Colours.color_f5f5,
         body: MediaQuery.removePadding(context: context,
@@ -73,7 +71,7 @@ class _MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin 
           child: ListView(
           children: <Widget>[
             Container(
-              height: ScreenUtil.getInstance().setHeight(220),
+              height: AppSize.height(220),
               width: double.infinity,
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage(ImageMinePath.icon_user_bg),fit: BoxFit.cover),
@@ -134,8 +132,8 @@ class _MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin 
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('用户名：${this.userInfo.username}',style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(32),color: Colors.white)),
-                          Text('普通会员',style: TextStyle(fontSize: ScreenUtil.getInstance().setSp(24), color: Colors.white)),
+                          Text('用户名：${this.userInfo.username}',style: TextStyle(fontSize: AppSize.fontSize(32),color: Colors.white)),
+                          Text('普通会员',style: TextStyle(fontSize: AppSize.fontSize(24), color: Colors.white)),
                         ],
                       )
                   ):
@@ -163,7 +161,7 @@ class _MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin 
               ),
             ),
             Divider(
-               height: ScreenUtil.getInstance().setHeight(10),
+               height: 10,
             ),
             Card(
               color: Colors.white,
@@ -191,7 +189,7 @@ class _MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin 
             ),
 
             Divider(
-              height: ScreenUtil.getInstance().setHeight(10),
+              height: 10,
             ),
             Card(
               color: Colors.white,
@@ -227,14 +225,14 @@ class _MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin 
     if(this._image != null) {
       return ClipRRect(
         //圆角效果
-        borderRadius: BorderRadius.circular(ScreenUtil.getInstance().setWidth(50)),
-        child: Image.file(this._image,width: ScreenUtil.getInstance().setWidth(100),height: ScreenUtil.getInstance().setWidth(100),fit:BoxFit.cover),
+        borderRadius: BorderRadius.circular(AppSize.width(50)),
+        child: Image.file(this._image,width: AppSize.width(100),height: AppSize.width(100),fit:BoxFit.cover),
       );
     }else {
       return ClipRRect(
         //圆角效果
-        borderRadius: BorderRadius.circular(ScreenUtil.getInstance().setWidth(50)),
-        child: Image.asset(ImageMinePath.icon_user_place,width: ScreenUtil.getInstance().setWidth(100),height: ScreenUtil.getInstance().setWidth(100),fit:BoxFit.cover),
+        borderRadius: BorderRadius.circular(AppSize.width(50)),
+        child: Image.asset(ImageMinePath.icon_user_place,width: AppSize.width(100),height: AppSize.width(100),fit:BoxFit.cover),
       );
     }
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zlapp/_const/const.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:zlapp/utitl/screenUtil.dart';
+import 'package:zlapp/utitl/appSize.dart';
 import 'package:zlapp/http/httpUtil.dart';
 import 'package:zlapp/Page/Home/home_banner_model_entity.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -80,8 +80,6 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
 
 
   Widget build(BuildContext context) {
-    //根据屏幕适配
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colours.color_76fc,
@@ -101,8 +99,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                   delegate: new SliverChildListDelegate(<Widget>[
                     Container(
                       color: Colors.white,
-                      width:ScreenUtil.instance.width,
-                      height: ScreenUtil.instance.setHeight(220),
+                      height: AppSize.height(220),
                       margin: EdgeInsets.only(bottom: 10.0),
                       child: new Swiper(
                         itemBuilder: (BuildContext context, int index) {
@@ -187,8 +184,8 @@ class NavList extends StatelessWidget {
                     CachedNetworkImage(
                     imageUrl: img,
                     fit: BoxFit.fill,
-                    height: ScreenUtil.instance.setHeight(60),
-                    width: ScreenUtil.instance.setHeight(60),
+                    height:AppSize.height(60),
+                    width:AppSize.height(60),
                     placeholder: (context, url) =>
                     const CircularProgressIndicator(),
                     errorWidget: (context, url, error) => const Icon(Icons.error),

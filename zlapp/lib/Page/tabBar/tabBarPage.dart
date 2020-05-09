@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zlapp/Page/Home/homePage.dart';
 import 'package:zlapp/Page/Shop/shopPage.dart';
+import 'package:zlapp/Page/Order/orderPage.dart';
 import 'package:zlapp/Page/Mine/mine.dart';
 import 'package:zlapp/_const/colorsConst.dart';
 class TabBarPage extends StatefulWidget {
@@ -11,7 +12,7 @@ class TabBarPage extends StatefulWidget {
 class _TabBarPageState extends State<TabBarPage> {
   int _selectedIndex = 0;
   var tabImages;
-  var appBarTitles = ['首页', '商城', '我的'];
+  var appBarTitles = ['首页', '商城', '购物车','我的'];
   PageController _controller = PageController(initialPage: 0);
   /*
    * 存放三个页面，跟fragmentList一样
@@ -58,6 +59,7 @@ class _TabBarPageState extends State<TabBarPage> {
     tabImages = [
       [getTabImage('assets/images/appTabbar/shouye.png'), getTabImage('assets/images/appTabbar/shouye-2.png')],
       [getTabImage('assets/images/appTabbar/shangcheng.png'), getTabImage('assets/images/appTabbar/shangcheng-2.png')],
+      [getTabImage('assets/images/appTabbar/gouwuchekong.png'), getTabImage('assets/images/appTabbar/gouwuchekong-2.png')],
       [getTabImage('assets/images/appTabbar/wode.png'), getTabImage('assets/images/appTabbar/wode-2.png')]
     ];
     /*
@@ -66,6 +68,7 @@ class _TabBarPageState extends State<TabBarPage> {
     _pageList = [
       new HomePage(),
       new ShopPage(),
+      new OrderPage(),
       new MinePage(),
     ];
   }
@@ -110,6 +113,9 @@ class _TabBarPageState extends State<TabBarPage> {
         ),
         new BottomNavigationBarItem(
             icon: getTabIcon(2), title: getTabTitle(2)
+        ),
+        new BottomNavigationBarItem(
+            icon: getTabIcon(3), title: getTabTitle(3)
         ),
       ],
       type: BottomNavigationBarType.fixed,

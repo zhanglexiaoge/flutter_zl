@@ -10,6 +10,7 @@ import 'package:zlapp/_const/sharedPreferencesKeys.dart';
 import 'package:zlapp/Page/Login/user_model_entity.dart';
 //import 'package:permission_handler/permission_handler.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
+import 'package:zlapp/utitl/appSize.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -34,32 +35,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin{
       _initSplash();
     });
   }
-//  Future requestPermission() async {
-//    if (Platform.isAndroid) {
-//      //申请网络权限
-//      Permission.sms
-//    }
-//
-//    // 申请权限
-//
-//    Map<PermissionGroup, PermissionStatus> permissions =
-//
-//    await PermissionHandler().requestPermissions([PermissionGroup.storage]);
-//
-//    // 申请结果
-//
-//    PermissionStatus permission =
-//
-//    await PermissionHandler().checkPermissionStatus(PermissionGroup.storage);
-//
-//    if (permission == PermissionStatus.granted) {
-//      Fluttertoast.showToast(msg: "权限申请通过");
-//    } else {
-//      Fluttertoast.showToast(msg: "权限申请被拒绝");
-//    }
-//  }
-
-
 
 
   @override
@@ -82,8 +57,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin{
       }
   }
  void goPage(){
-     //判断是否登录
-   Application.sp.remove(SharedPreferencesKeys.USER_MODEL);
+    //判断是否登录
    if (!Application.sp.hasKey(SharedPreferencesKeys.USER_MODEL)) {
      Application.router.navigateTo(context, Routes.login, clearStack: true);
    }else {
@@ -98,6 +72,9 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin{
   }
   @override
   Widget build(BuildContext context) {
+    // 初始化屏幕适配包
+    AppSize.init(context);
+    Screen.init(context);
     return Material(
         child: _status == 0 ?Swiper(
           key: const Key('adswiper'),

@@ -17,3 +17,9 @@ class ImageMinePath {
    static const String icon_user_place = "$imageDir/user.png";
 
 }
+class ImageshopPath {
+   //images
+   static const String imageDir = "assets/images/shopPage";
+   static const String exchange_bg = "$imageDir/exchange_btn.png";
+
+}
