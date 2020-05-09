@@ -7,3 +7,5 @@ const HantalkBaseserviceUrl = "https://test-hantalk.hanmaker.com/";
 const loginOld = "user/login";
 //退出登录接口
 const loginOut = "user/logout/json";
+//首页banner
+const homeBanner = "banner/json";

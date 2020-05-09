@@ -55,9 +55,11 @@ dependencies:
   #loading 各种菊花
   flutter_spinkit: ^4.1.2
   # toast
-  fluttertoast: ^4.0.1
+  fluttertoast: ^4.0.0
   #选择图片框架
   image_picker: ^0.6.5+2
+#  #Flutter 权限申请
+#  permission_handler: ^5.0.0+hotfix.4
 
 
 

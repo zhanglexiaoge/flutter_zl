@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zlapp">
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
@@ -27,5 +28,10 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!--//访问电话状态-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!--//获取网络信息状态-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!--//获取当前WiFi接入的状态以及WLAN热点的信息-->
+
 </manifest>

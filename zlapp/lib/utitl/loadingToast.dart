@@ -26,7 +26,7 @@ class LodingToast {
         barrierDismissible: false,
         builder: (_) {
           return SpinKitFadingCircle(
-            color: Color(0xFFFFC800),
+            color: Color(0xFF666666),
           );
         });
   }
