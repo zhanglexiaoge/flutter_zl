@@ -1,6 +1,7 @@
 import 'package:zlapp/Page/Home/mock/home_girder_model_entity.dart';
 import 'package:zlapp/Page/Home/mock/home_list_model_entity.dart';
 import 'package:zlapp/Page/Home/home_banner_model_entity.dart';
+import 'package:zlapp/Page/ClassificationPage/calssifcation_model_entity.dart';
 import 'package:zlapp/Page/Shop/goods_model_entity.dart';
 import 'package:zlapp/Page/Login/user_model_entity.dart';
 
@@ -14,6 +15,8 @@ class EntityFactory {
       return HomeListModelEntity.fromJson(json) as T;
     } else if (T.toString() == "HomeBannerModelEntity") {
       return HomeBannerModelEntity.fromJson(json) as T;
+    } else if (T.toString() == "CalssifcationModelEntity") {
+      return CalssifcationModelEntity.fromJson(json) as T;
     } else if (T.toString() == "GoodsModelEntity") {
       return GoodsModelEntity.fromJson(json) as T;
     } else if (T.toString() == "UserModelEntity") {

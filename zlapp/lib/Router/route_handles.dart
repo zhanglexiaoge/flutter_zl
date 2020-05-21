@@ -4,6 +4,7 @@ import 'package:zlapp/Page/Login/loginPage.dart';
 import 'package:zlapp/Page/splashPage/splashPage.dart';
 import 'package:zlapp/Page/tabBar/tabBarPage.dart';
 import 'package:zlapp/Page/Mine/Set/setPage.dart';
+import 'package:zlapp/Page/ClassificationPage/classificationPage.dart';
 
 // splash 页面 广告页
 var splashHandler = new Handler(
@@ -24,4 +25,9 @@ var tabbarHandler = new Handler(
 var setPageHandler = new Handler(
     handlerFunc: (BuildContext context, Map<String, List<Object>> params) {
       return SetPage();
+    });
+// 所有分类界面
+var  classificationPageHandler = new Handler(
+    handlerFunc: (BuildContext context, Map<String, List<Object>> params) {
+      return ClassificationPage();
     });

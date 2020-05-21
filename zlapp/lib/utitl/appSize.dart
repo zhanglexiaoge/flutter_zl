@@ -26,12 +26,15 @@ class AppSize{
 class Screen{
   static double _w;
   static double _statusH;
+  static double _h;
+
 
   static void init(BuildContext c){
     if(_w == null) {
       MediaQueryData mqd = MediaQuery.of(c);
 
       _w = mqd.size.width;
+      _h = mqd.size.height;
       _statusH = mqd.padding.top;
     }
   }
@@ -39,6 +42,20 @@ class Screen{
   static double width(){
     if(_w != null){
       return _w;
+    }
+    return 0;
+  }
+
+  static double height(){
+    if(_h != null){
+      return _h;
+    }
+    return 0;
+  }
+  //减去状态栏高度
+  static double heightNostatus(){
+    if(_h != null && _statusH != null ){
+      return _h - _statusH;
     }
     return 0;
   }

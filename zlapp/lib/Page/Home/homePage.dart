@@ -8,6 +8,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'mock/home_girder_model_entity.dart';
 import 'mock/homeGirderJson.dart';
 import 'mock/home_list_model_entity.dart';
+import 'package:zlapp/utitl/application.dart';
+import 'package:zlapp/Router/routes.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -141,6 +143,11 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
       return InkWell(
         onTap: () {
           //
+          if(girderModel.id == 8) {
+            //跳转到所有分类
+            Application.router.navigateTo(context, Routes.classificationPage,clearStack: true);
+          }
+
         },
         child: NavList(
           name: girderModel.name,

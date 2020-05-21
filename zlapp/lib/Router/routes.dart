@@ -7,6 +7,7 @@ class Routes {
   static String tabbarpage = "/tabbarpage";
   static String login = "/login";
   static String setPage = "/setPage";
+  static String classificationPage = "/classificationPage";
   static void configureRoutes(Router router) {
     router.notFoundHandler = new Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -17,6 +18,7 @@ class Routes {
     router.define(login, handler: loginHandler);
     router.define(tabbarpage, handler: tabbarHandler);
     router.define(setPage, handler: setPageHandler);
+    router.define(classificationPage, handler: classificationPageHandler);
   }
 
 }
